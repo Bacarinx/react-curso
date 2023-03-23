@@ -15,8 +15,3 @@ function App() {
 
 export default App;
 
-//Resumo aula 2 :
-
-//Para importar um arquivo utilizamos a sintaxe: import [nome Arquivo] from [lugar de exportação]
-
-//para usar o arquivo importado utilizamos asintaxe: <NomeCOmponente />
