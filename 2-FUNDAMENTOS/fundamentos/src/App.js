@@ -1,10 +1,12 @@
 //Components
 import FirstComponent from './components/FirstComponent';
 import TemplateExpressions from './components/TemplateExpressions';
+import MyComponent from './components/MyComponent';
+import Events from './components/Events';
 
 //styles /CSS
 import './App.css';
-import MyComponent from './components/MyComponent';
+
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
       <FirstComponent />
       <TemplateExpressions />
       <MyComponent />
+      <Events />
     </div>
   );
 };
@@ -59,6 +62,16 @@ export default App;
 
 // 1 - Podemos acrescentar componentes dentro de componentes, além disso podemos inserí-los junto a esses proprios componentes no arquivo pai, que é o "app.js"
 
+//----------------------------------------------------------//
 
+//resumo aula 7 - Eventos 
 
+// 1 - Na hora de criar um evento, antes de iniciar o JSX, utilizamos uma arrow function para descrever todo o código do evento;
 
+// 2 - Para nomear um evento, em geral utilizamos handleAlgumaCOisa, Ex: handleMeuEvento;
+
+// 2 - Para colocar o evento dentro do código, usamos o próprio arquivo de criação do evento, o por meio das tags chamamos eles dentro de chaves;
+
+// exemplo: <button onCLick = {Nome do evento}> </button>;
+
+// 3 - A função de click tem um nome proprio, "onCLick";
