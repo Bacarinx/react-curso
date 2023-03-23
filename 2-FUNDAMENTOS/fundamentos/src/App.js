@@ -3,6 +3,7 @@ import FirstComponent from './components/FirstComponent';
 import TemplateExpressions from './components/TemplateExpressions';
 import MyComponent from './components/MyComponent';
 import Events from './components/Events';
+import Challenger from './components/Challenger';
 
 //styles /CSS
 import './App.css';
@@ -16,6 +17,7 @@ function App() {
       <TemplateExpressions />
       <MyComponent />
       <Events />
+      <Challenger />
     </div>
   );
 };
@@ -75,3 +77,9 @@ export default App;
 // exemplo: <button onCLick = {Nome do evento}> </button>;
 
 // 3 - A função de click tem um nome proprio, "onCLick";
+
+//----------------------------------------------------------//
+
+//resumo aula 8 - Função de renderização
+
+// 1 - Podemos criar funções fora do JSX, que tenha em seu corpo, um return de elementos HTML, e podemos chamá-la no proprio arquivo para incrementar um HTML dinâmico.
