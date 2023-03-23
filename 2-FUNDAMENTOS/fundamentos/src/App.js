@@ -4,6 +4,7 @@ import TemplateExpressions from './components/TemplateExpressions';
 
 //styles /CSS
 import './App.css';
+import MyComponent from './components/MyComponent';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <h1>Fundamentos React</h1>
       <FirstComponent />
       <TemplateExpressions />
+      <MyComponent />
     </div>
   );
 };
@@ -50,6 +52,12 @@ export default App;
 //resumo aula 5 - Template Expressions 
 
 // 1 - Todo conjunto de chaves "{}", consegue interpolar um conjunto de código em javascript, logo, podemos inserir dentro de um paragrafo, o valor de uma variavel, objeto, vetor, cálculo matematico, etc
+
+//----------------------------------------------------------//
+
+//resumo aula 6 - Hierarquia de componentes
+
+// 1 - Podemos acrescentar componentes dentro de componentes, além disso podemos inserí-los junto a esses proprios componentes no arquivo pai, que é o "app.js"
 
 
 
