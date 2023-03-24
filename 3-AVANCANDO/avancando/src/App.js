@@ -21,7 +21,19 @@ function App() {
 
 export default App;
 
-/*resumo aula 1 - imagens na pasta public
-1 - Para usar uma imagem da pasta public, basta utilizarmos a tag img, e no src colocar "/" e em seguida o nome da imagem Ex: /img1.jpg
+/*                   Imagens Em React
+
+1 - usando img na public: Basta utilizar a tag img, e no src colocar "/" e em seguida o nome da imagem Ex: /img1.jpg
+
+2-Usando img na assets: temos que importar a img (import [name] from [arquivo img]) e na parte do src utilizar uma interpolação de chaves com o nome da img importada ex: src = {City}
+
+                    Hooks
+                  
+1- Todos os hooks começam com "use" ex: useState
+
+2- os Hooks precisam ser importados 
+
+3- podemos criar nossos proprios hooks, isso é chamado do custom hook
+
 */
 
