@@ -65,5 +65,10 @@ setState(55) --> exemplo
 
 4- Quando colocamos um objeto no JSX, diferente do JS, sua sintaxe é de parenteses () e não chaves {};
 
+5- Durante a renderizção das listas, cada elemento precisa de uma key, ela é colocada no attr da (li);
+
+6- Podemos adicionar uma key a partir do código de um produto ou qualquer indentificador único, gerado a partir de um banco de dados ou de um objeto.
+
+EX: <li key = {user.id}> {user.name} - {user.age} </li>
 */
 
