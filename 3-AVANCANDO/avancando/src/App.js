@@ -70,5 +70,14 @@ setState(55) --> exemplo
 6- Podemos adicionar uma key a partir do código de um produto ou qualquer indentificador único, gerado a partir de um banco de dados ou de um objeto.
 
 EX: <li key = {user.id}> {user.name} - {user.age} </li>
+
+                    Previous States
+
+1 - previous states se refere ao valor atual dentro de um set de dados
+
+2 - O prev state é o primeiro parametro identificado dentro do set()
+Ex: setUsers(prevUsers) 
+
+3 - O prev state é muito utilizado para modificar listas, pois temos o valor antigo, e o transformamos em um novo valor
 */
 
