@@ -2,6 +2,7 @@
 import './App.css';
 
 import City from './assets/city.jpg';
+import MannageData from './components/MannageData';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <div>
         <img src={City} alt="Cidade paisagem" />
       </div>
+      <MannageData />
     </div>
   );
 }
@@ -35,5 +37,20 @@ export default App;
 
 3- podemos criar nossos proprios hooks, isso é chamado do custom hook
 
+
+                    useState hook do react
+
+1- Para utilizar o hook, precisamos primeiro importar ele do proprio react:
+import {useState} from 'react';
+
+2- O hook de useState serve para poder visualizar a alteração de um valor variado dentro de um campo por exemplo. ex: 15 para 30, true para false, etc;
+
+3- podemos criar um valor inicial para o state inicial:
+const [NameState, UseNameState] = useState([valor inicial]); 
+
+ex: const [number, useNumber] = useState(30); 
+
+4- Para alterar esse valor posteriormente, basta chamar a função set com o novo valor:
+setState(55) --> exemplo 
 */
 
