@@ -2,6 +2,7 @@
 import './App.css';
 
 import City from './assets/city.jpg';
+import ListRender from './components/ListRender';
 import MannageData from './components/MannageData';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <img src={City} alt="Cidade paisagem" />
       </div>
       <MannageData />
+      <ListRender />
     </div>
   );
 }
@@ -52,5 +54,16 @@ ex: const [number, useNumber] = useState(30);
 
 4- Para alterar esse valor posteriormente, basta chamar a função set com o novo valor:
 setState(55) --> exemplo 
+
+                    Renderização de listas 
+
+1- Podemos colocar uma lista através de JSX e  de um array na página do projeto
+
+2- temos que criar uma constante (array), com as caracteristicas de um useState(), e acrescentar elementos a ele
+
+3- Agora criamos uma lista não ordenada (ul) e percorremos cada elemento dela a partir de um map();
+
+4- Quando colocamos um objeto no JSX, diferente do JS, sua sintaxe é de parenteses () e não chaves {};
+
 */
 
