@@ -1,12 +1,19 @@
 //import CSS
+import { useState } from 'react';
 import './App.css';
 
 import City from './assets/city.jpg';
+import CarDetails from './components/CarDetails';
 import CondicionalRender from './components/CondicionalRender';
 import ListRender from './components/ListRender';
 import MannageData from './components/MannageData';
+import ShowUserName from './components/ShowUserName';
 
 function App() {
+
+  const name = "Joaquim";
+  const [userName] = useState("Bacarinx");
+
   return (
     <div className="App">
       <h1>Avançando em React</h1>
@@ -20,7 +27,9 @@ function App() {
       </div>
       <MannageData />
       <ListRender />
-      <CondicionalRender/>
+      <CondicionalRender />
+      <ShowUserName name={userName}/>
+      <CarDetails marca="VW" KM={100000} color="Azul"/>
     </div>
   );
 }
@@ -93,5 +102,32 @@ EX: {!var && <p>Valor da variavel = false</p>}
 3- Em caso de if e else, vamos utilizar a estrutura de operador Ternário
 
 Ex: {var === 10 ? (<p>valor é 10</p>) : (<p>Valor não é 10</p>)}
+
+      Props
+
+1 - Props é um recurso fundamental que nos permite passa valores de um componente pai para um componente filho
+
+2- AS props vem em um objeto no argumento da função do componente, ou seja, na hora de importar um componente, podemos usar qualquer propriedade.
+Ex: <ShowUserName name= {username} />
+
+3 - e no arquivo ShowUserName podemos utilizar esse attr name apartir de uma notação ponto:
+
+  -Primeiro passamos a prop como parametro da função
+  - Depois podemos usar ela como um objeto
+
+Ex: <h1> O nome de usuário é: {props.name} </h1>
+
+      Destructuring em props
+
+1- Em grandes prejetos é comum os devs desestruturarem as props, pois geralmente possuem muitas props em um projeto;
+
+2- COm a desestruturação, o dev não precisa colocar props.ALgumaCoisa, basta colocar o nome da prop direto
+
+3- Para fazer a destruturação temos que trocar o parametro Props por um objeto de itens
+
+Ex não desestruturado: corDetails(props)
+Ex desestruturado: corDetails({name, cor, modelo})
+
+OBS: os nomes dos itens do objeto, precisam ser os mesmos passados como propriedade na importação do componente
 */
 
