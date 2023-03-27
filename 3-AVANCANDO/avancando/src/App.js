@@ -1,5 +1,5 @@
 //import CSS
-import { useState } from 'react';
+import {useState } from 'react';
 import './App.css';
 
 import City from './assets/city.jpg';
@@ -8,11 +8,18 @@ import CondicionalRender from './components/CondicionalRender';
 import ListRender from './components/ListRender';
 import MannageData from './components/MannageData';
 import ShowUserName from './components/ShowUserName';
+import Fragmentos from './components/Fragmentos';
 
 function App() {
 
-  const name = "Joaquim";
+//   const name = "Joaquim";
   const [userName] = useState("Bacarinx");
+
+  const cars = [
+      {id: 1, brand: "Ferrari", color:"Yellow", newCar: true, km: 0},
+      {id: 2, brand: "KIA", color:"White", newCar: false, km: 1180},
+      {id: 3, brand: "Renault", color:"Blue", newCar: false, km: 1283}
+  ]
 
   return (
     <div className="App">
@@ -35,6 +42,12 @@ function App() {
       {/* Reaproveitamento */}
       {<CarDetails marca="Ford" KM={0} color="red" newCar={true}/>}
       {<CarDetails marca="Fiat" KM={5400} color="white" newCar={false}/>}
+      {/* Loop em array de objetos */}
+      {cars.map((car) => (
+            <CarDetails marca={car.brand} color={car.color} KM={car.km} newCar={car.newCar}/>
+      ))}
+      {/* Fragments */}
+      <Fragmentos propFragments="Teste" />
     </div>
   );
 }
@@ -134,5 +147,21 @@ Ex não desestruturado: corDetails(props)
 Ex desestruturado: corDetails({name, cor, modelo})
 
 OBS: os nomes dos itens do objeto, precisam ser os mesmos passados como propriedade na importação do componente
+
+      Reutilização com Loop
+
+1 - Os arrays podem conter muitos itens
+
+2- O correto é utilizar uma estrutura de loop(MAP) para sua exibbição
+
+3- Com isso vamos conciliar os três conceitos: Renderização de listas, reaproveitamento de componentes e props
+
+      React Fragments
+
+1 - Eles são interessantes para quando precisamos ter mais de um elemento pai em um componente
+
+2- Criamos a Tag vazia <> ... </>
+
+3- Ela não altera a estrutura do HTML como uma div.
 */
 
