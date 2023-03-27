@@ -28,8 +28,13 @@ function App() {
       <MannageData />
       <ListRender />
       <CondicionalRender />
+      {/* Props */}
       <ShowUserName name={userName}/>
-      <CarDetails marca="VW" KM={100000} color="Azul"/>
+      {/* Destructuring */}
+      <CarDetails marca="VW" KM={100000} color="Azul" newCar={false}/>
+      {/* Reaproveitamento */}
+      {<CarDetails marca="Ford" KM={0} color="red" newCar={true}/>}
+      {<CarDetails marca="Fiat" KM={5400} color="white" newCar={false}/>}
     </div>
   );
 }
@@ -121,7 +126,7 @@ Ex: <h1> O nome de usuário é: {props.name} </h1>
 
 1- Em grandes prejetos é comum os devs desestruturarem as props, pois geralmente possuem muitas props em um projeto;
 
-2- COm a desestruturação, o dev não precisa colocar props.ALgumaCoisa, basta colocar o nome da prop direto
+2- Com a desestruturação, o dev não precisa colocar props.ALgumaCoisa, basta colocar o nome da prop direto
 
 3- Para fazer a destruturação temos que trocar o parametro Props por um objeto de itens
 
