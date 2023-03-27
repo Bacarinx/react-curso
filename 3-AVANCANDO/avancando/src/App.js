@@ -9,6 +9,7 @@ import ListRender from './components/ListRender';
 import MannageData from './components/MannageData';
 import ShowUserName from './components/ShowUserName';
 import Fragmentos from './components/Fragmentos';
+import Container from './components/Container';
 
 function App() {
 
@@ -48,6 +49,10 @@ function App() {
       ))}
       {/* Fragments */}
       <Fragmentos propFragments="Teste" />
+      {/* Children */}
+      <Container>
+            <p>Este é o conteudo</p>
+      </Container>
     </div>
   );
 }
@@ -163,5 +168,11 @@ OBS: os nomes dos itens do objeto, precisam ser os mesmos passados como propried
 2- Criamos a Tag vazia <> ... </>
 
 3- Ela não altera a estrutura do HTML como uma div.
+
+      Children
+
+1- Com esta propriedade, podemos inserir html na própria chamada do componente
+
+2- Para poder fazer isso, na hora de desestruturar as props, como primeiro valor passamos "children", logo tudo oque inserirmos na chamada do componente estará para uso na propriedade "children"
 */
 
