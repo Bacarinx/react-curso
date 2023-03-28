@@ -1,0 +1,13 @@
+ul {
+    padding: 10px 0;
+}
+
+li {
+    padding: 8px;
+    list-style: none;
+}
+
+.NewCar {
+    color: rgb(25, 212, 25);
+    background-color: lightcyan;
+}
