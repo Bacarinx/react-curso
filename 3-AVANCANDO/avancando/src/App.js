@@ -50,7 +50,12 @@ function App() {
       {<CarDetails marca="Fiat" KM={5400} color="white" newCar={false}/>}
       {/* Loop em array de objetos */}
       {cars.map((car) => (
-            <CarDetails marca={car.brand} color={car.color} KM={car.km} newCar={car.newCar}/>
+            <CarDetails 
+            key={car.id} 
+            marca={car.brand} 
+            color={car.color} 
+            KM={car.km} 
+            newCar={car.newCar}/>
       ))}
       {/* Fragments */}
       <Fragmentos propFragments="Teste" />
@@ -59,7 +64,7 @@ function App() {
             <p>Este é o conteudo</p>
       </Container>
       {/* Executar prop */ }
-      <ExecuteFunction  />
+      <ExecuteFunction myFunction={showMessage} />
     </div>
   );
 }
@@ -181,5 +186,11 @@ OBS: os nomes dos itens do objeto, precisam ser os mesmos passados como propried
 1- Com esta propriedade, podemos inserir html na própria chamada do componente
 
 2- Para poder fazer isso, na hora de desestruturar as props, como primeiro valor passamos "children", logo tudo oque inserirmos na chamada do componente estará para uso na propriedade "children"
+
+      Função de prop
+
+1 - Podemos declarar umafunção como propriedade na chamada de um componente
+
+2- Com isso podemos colocar uma função no componente principal (app.js) colocar a função na chamada de algum componente e manipulá-lo no próprio componente
 */
 
