@@ -11,6 +11,8 @@ import ShowUserName from './components/ShowUserName';
 import Fragmentos from './components/Fragmentos';
 import Container from './components/Container';
 import ExecuteFunction from './components/ExecuteFunction';
+import Message from './components/Message';
+import ChangeMessageState from './components/ChangeMessageState';
 
 function App() {
 
@@ -25,6 +27,12 @@ function App() {
 
   function showMessage() {
       console.log("Evento do componente Pai")
+  }
+
+  const [message, setMessage] = useState("")
+
+  const handleMessage = (msg) => {
+      setMessage(msg)
   }
 
   return (
@@ -65,6 +73,9 @@ function App() {
       </Container>
       {/* Executar prop */ }
       <ExecuteFunction myFunction={showMessage} />
+      {/* State lift */}
+      <Message msg={message}/>
+      <ChangeMessageState handleMessage={handleMessage}/>
     </div>
   );
 }
@@ -192,5 +203,10 @@ OBS: os nomes dos itens do objeto, precisam ser os mesmos passados como propried
 1 - Podemos declarar umafunção como propriedade na chamada de um componente
 
 2- Com isso podemos colocar uma função no componente principal (app.js) colocar a função na chamada de algum componente e manipulá-lo no próprio componente
+
+      State lift 
+
+1 - Elevação de state é quando um valor é elevado do componente filho para um componente pai
+
 */
 
