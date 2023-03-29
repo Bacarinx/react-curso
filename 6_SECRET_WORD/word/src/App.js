@@ -12,6 +12,7 @@ import StartScreen from './components/StartScreen';
 import Game from './components/Game';
 import GameOver from './components/GameOver';
 
+//criando as 3 partes do game
 const stages = [
   {id: 1, name: "start"},
   {id: 2, name: "game"},
@@ -19,16 +20,31 @@ const stages = [
 ]
 
 function App() {
-  const [gameStage, setGameStage] = useState(stages[0].name)
-  const [words] = useState(wordsList)
+  const [gameStage, setGameStage] = useState(stages[0].name) //criando a variável para mudar para cada etapa do game
 
-  console.log(words)
+  const [words] = useState(wordsList) //setando as palavras do jogo em um hook useState
+
+  //starts the secret word Game
+  const startGame = () => { 
+    setGameStage(stages[1].name)
+  }
+
+  //process the letter input
+  const verifyLetter = () => {
+    setGameStage(stages[2].name)
+  }
+
+  //restarts the game
+  const retry = () => {
+    setGameStage(stages[0].name)
+  }
+  
 
   return (
     <div className="App">
-      {gameStage === 'start' && <StartScreen />}
-      {gameStage === 'game' && <Game />}
-      {gameStage === 'end' && <GameOver />}
+      {gameStage === 'start' && <StartScreen startGame={startGame} />}
+      {gameStage === 'game' && <Game verifyLetter={verifyLetter} />}
+      {gameStage === 'end' && <GameOver retry={retry} />}
     </div>
   );
 }
