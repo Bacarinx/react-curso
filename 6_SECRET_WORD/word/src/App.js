@@ -39,11 +39,9 @@ function App() {
     //pick a random category
     const categories = Object.keys(words)
     const category = categories[Math.floor(Math.random() * Object.keys(categories).length)]
-    console.log(category)
 
     //pick a random Word
     const word = words[category][Math.floor(Math.random() * words[category].length)]
-    console.log(word)
 
     return {word, category}
   }, [words])
@@ -62,9 +60,6 @@ function App() {
     //Deixando todas as letras em lower Case
     wordLetters = wordLetters.map((l) => l.toLowerCase())
 
-    console.log(word, category)
-    console.log(wordLetters)
-
     //fill states
     setPickedWord(word)
     setPickedCategory(category)
@@ -75,7 +70,6 @@ function App() {
 
   //process the letter input
   const verifyLetter = (letter) => {
-    console.log(letter);
     const normalizedLetter = letter.toLowerCase();
 
     //check if letter has already been utilized
