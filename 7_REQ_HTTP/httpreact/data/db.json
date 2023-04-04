@@ -19,6 +19,16 @@
       "name": "teste",
       "price": "12",
       "id": 4
+    },
+    {
+      "name": "teclado",
+      "price": "110",
+      "id": 5
+    },
+    {
+      "name": "Blusa",
+      "price": "90",
+      "id": 6
     }
   ]
 }

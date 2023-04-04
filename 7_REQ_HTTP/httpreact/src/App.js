@@ -40,6 +40,14 @@ function App() {
       },
       body: JSON.stringify(product) //transformando o body em JSON
     })
+
+    //3 - Carregamento dinâmico
+    const addedProduct = await res.json() //transformando o Json em objeto 
+
+    setProducts((previousProducts) => [...previousProducts, addedProduct])
+
+    setName('')
+    setPrice('')
   }
 
   return (
@@ -103,5 +111,12 @@ export default App;
   - Um array de produto que será mandado para o back-end
   - uma resposta ao back-end com 3 campos: Method, tipo de dado manipulado, e transformar o body em JSON
   
+      Carregamento de dados dinâmicos
+
+1 - Primeiro para criar os dados dinâmicos (inserir o dado digitado pelo usuário no array de produtos direto), precisamos:
+  -Tranforma o dado vindo em Json para Objeto: const addedProduct = res.json()
+
+  -logo em seguida setamos no array de produto esse novo valor, mas mantendo os valores antigo com o operador rest:
+  EX - setProducts((actualProduct) => [...actualProduct, addedProduct])
 
 */
