@@ -2,27 +2,33 @@ import './App.css';
 
 import { useState, useEffect } from 'react'
 
+//4 - custom hook
+import {useFetch} from "./hooks/useFetch" //importando o custom hook
+
 const url = "http://localhost:3000/products"
 
 function App() {
   const [products, setProducts] = useState([])
 
+  //4 - custom hook
+  const { data: items } = useFetch(url)
+
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
 
   //1 - resgatando dados
-  useEffect(() => {
-    async function fetchData() {
+  // useEffect(() => {
+  //   async function fetchData() {
 
-      const res = await fetch(url)
+  //     const res = await fetch(url)
 
-      const data = await res.json()
+  //     const data = await res.json()
       
-      setProducts(data)
-     }
+  //     setProducts(data)
+  //    }
 
-     fetchData()
-  }, [])
+  //    fetchData()
+  // }, [])
 
   // 2 - Add de produtos
   const handleSubmit = async (e) => {
@@ -54,7 +60,7 @@ function App() {
     <div className="App">
       <h1>Lista de Produtos</h1>
       <ul>
-        {products.map((product) => (
+        {items && items.map((product) => (
           <li key={product.id}>{product.name} - {product.price}</li>
         ))}
       </ul>
@@ -119,4 +125,13 @@ export default App;
   -logo em seguida setamos no array de produto esse novo valor, mas mantendo os valores antigo com o operador rest:
   EX - setProducts((actualProduct) => [...actualProduct, addedProduct])
 
+      Custom hook para resgate de dados
+
+1 - Primeiro criamos na pasta "hooks", o nosso arquivo que servirá como hook
+
+2- Logo em seguida, colocamos nosso código desejado à ele, nesse calo o nosso hook vai ter a mesma função da add de dados no arquivo json
+
+3 - logo em seguida exportamos ele para o App.js
+
+4 - 
 */
