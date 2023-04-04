@@ -120,7 +120,7 @@ export default App;
 1- Para utilizar o hook, precisamos primeiro importar ele do proprio react:
 import {useState} from 'react';
 
-2- O hook de useState serve para poder visualizar a alteração de um valor variado dentro de um campo por exemplo. ex: 15 para 30, true para false, etc;
+2- O hook de useState serve para poder visualizar a alteração de um valor variado dentro de um campo, por exemplo. ex: 15 para 30, true para false, etc;
 
 3- podemos criar um valor inicial para o state inicial:
 const [NameState, UseNameState] = useState([valor inicial]); 
