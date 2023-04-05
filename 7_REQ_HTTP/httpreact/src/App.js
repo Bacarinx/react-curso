@@ -11,24 +11,10 @@ function App() {
   const [products, setProducts] = useState([])
 
   //4 - custom hook
-  const { data: items } = useFetch(url)
+  const { data: items, httpConfig } = useFetch(url)
 
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
-
-  //1 - resgatando dados
-  // useEffect(() => {
-  //   async function fetchData() {
-
-  //     const res = await fetch(url)
-
-  //     const data = await res.json()
-      
-  //     setProducts(data)
-  //    }
-
-  //    fetchData()
-  // }, [])
 
   // 2 - Add de produtos
   const handleSubmit = async (e) => {
@@ -39,18 +25,7 @@ function App() {
       price,
     }
 
-    const res = await fetch(url, { //criando a res para o back-end
-      method: "POST", //definindo o método para adicionar produto
-      headers: { 
-        "Content-Type": "application/json" //Transmitir o tipo de conteudo que estamos manipulando 
-      },
-      body: JSON.stringify(product) //transformando o body em JSON
-    })
-
-    //3 - Carregamento dinâmico
-    const addedProduct = await res.json() //transformando o Json em objeto 
-
-    setProducts((previousProducts) => [...previousProducts, addedProduct])
+    httpConfig(product, "POST")
 
     setName('')
     setPrice('')
@@ -133,5 +108,11 @@ export default App;
 
 3 - logo em seguida exportamos ele para o App.js
 
-4 - 
+      Refatorando o POST
+
+1 - Utilizamos o mesmo hook para incluir uma etapa de POST
+
+2 - Criamos un NOVO useEffect que mapeia outra mudança de estado
+
+3 - Após ela ocorrer executamos a adição de produto
 */

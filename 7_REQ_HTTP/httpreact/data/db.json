@@ -29,6 +29,11 @@
       "name": "Blusa",
       "price": "90",
       "id": 6
+    },
+    {
+      "name": "mouse",
+      "price": "60",
+      "id": 7
     }
   ]
 }
