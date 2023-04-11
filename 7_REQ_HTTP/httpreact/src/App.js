@@ -54,7 +54,7 @@ function App() {
           <label>
             Nome:
             <input type="text" value={name} name="name" onChange={(e) => setName(e.target.value)}/>
-          </label>
+         </label>
           <label>
             Preço:
             <input type="number" value={price} name="price" onChange={(e) => setPrice(e.target.value)} />
