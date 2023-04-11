@@ -8,6 +8,8 @@ import Home from './pages/Home'
 import About from './pages/about'
 import Product from './pages/Product'
 import Info from "./pages/Info"
+import NotFound from './pages/NotFound';
+
 
 //components
 import Navbar from './components/Navbar'
@@ -26,6 +28,8 @@ function App() {
           <Route path="/products/:id" element={<Product />} />
           {/* 6 - Nested Route */}
           <Route path="/products/:id/info" element={<Info />} />
+          {/* 7 - no match route */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
@@ -92,5 +96,19 @@ No arquivo App.js definir um path como *
 
 Desta meneira, qualquer rota que não exista cairá neste componente
 
+                    Link Ativo
+Para ter fácil acesso a uma modificação para os links tivos vamos trocar o Link pelo NavLink
+
+Neste elemento temos acesso a um valor chamado isActive
+
+Ou seja, podemos ativar uma classe se a rota attual for a que está no atributo to
+
+
+                    Search Params
+É um recurso que permite obter o valor que vem na URL em forma de parametro, ex: produtos?q=camisa
+
+Utilizaremos o hook useSearchParams para obtê-los
+
+Com este recurso fica simpoes fazer uma funcionalidade de busca no sistema
 
 */
