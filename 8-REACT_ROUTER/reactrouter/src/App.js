@@ -7,11 +7,16 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/about'
 
+//components
+import Navbar from './components/Navbar'
+
 function App() {
   return (
     <div className="App">
       <h1>React Router</h1>
       <BrowserRouter>
+      <Navbar />
+      {/* 2 - links com React Router*/}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -41,5 +46,11 @@ Para criar links entre as páginas precisamos utiliozar o LINK do react Router
 
 No link configuramos o parâmetro "to", que recebe a URL/path que será redirecionadp quem clicar no link
 
+
+                    Carregando Dados
+                    
+Exercitando novamente o carregamento de dados com o hook useFetch    
+
+Depois poderemos utilizá-los para o "carregamento de dados individuais"
 
 */
