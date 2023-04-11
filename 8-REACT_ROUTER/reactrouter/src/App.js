@@ -9,18 +9,21 @@ import About from './pages/about'
 import Product from './pages/Product'
 import Info from "./pages/Info"
 import NotFound from './pages/NotFound';
-
+import Search from './pages/Search';
 
 //components
 import Navbar from './components/Navbar'
+import SearchForm from './components/SearchForm';
 
 function App() {
   return (
     <div className="App">
       <h1>React Router</h1>
       <BrowserRouter>
-      <Navbar />
       {/* 2 - links com React Router*/}
+      <Navbar />
+      {/* 9 - search */}
+      <SearchForm />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -28,6 +31,8 @@ function App() {
           <Route path="/products/:id" element={<Product />} />
           {/* 6 - Nested Route */}
           <Route path="/products/:id/info" element={<Info />} />
+          {/* 9 - Search */}
+          <Route path="/search" element={<Search />} />
           {/* 7 - no match route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
@@ -111,4 +116,12 @@ Utilizaremos o hook useSearchParams para obtê-los
 
 Com este recurso fica simpoes fazer uma funcionalidade de busca no sistema
 
+                    Redirect
+Podemos precisar de um redirecionamento de páginas eventualmente
+
+exemplo: Uma página antiga no sitema responde agora a uma nova URL
+
+Para isso vamos criar a rota com Route normalmente
+
+Mas em element vamos utilizar o component Navigate com um TO que vai para a rota correta
 */
