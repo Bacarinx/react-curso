@@ -1,17 +1,16 @@
 import './App.css';
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect} from 'react'
 
 //4 - custom hook
-import {useFetch} from "./hooks/useFetch" //importando o custom hook
+import { useFetch } from "./hooks/useFetch" //importando o custom hook
 
 const url = "http://localhost:3000/products"
 
 function App() {
-  const [products, setProducts] = useState([])
 
   //4 - custom hook
-  const { data: items, httpConfig } = useFetch(url)
+  const { data: items, httpConfig, loading, error } = useFetch(url)
 
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
@@ -27,18 +26,29 @@ function App() {
 
     httpConfig(product, "POST")
 
-    setName('')
-    setPrice('')
+    setName('') //resetando o campo nome depois da requisição
+    setPrice('') //resetando o campo preço depois da requisição
   }
+
+  // 8 - removendo produto
+  const handleDelete = (id) => {
+    httpConfig(id, "DELETE")
+  }
+
 
   return (
     <div className="App">
       <h1>Lista de Produtos</h1>
-      <ul>
+      {/* 6 - Loading */}
+      {loading && <p>Carregando Dados...</p>}
+      {error && <p>{error}</p>}
+      {!loading && (
+        <ul>
         {items && items.map((product) => (
-          <li key={product.id}>{product.name} - {product.price}</li>
+          <li key={product.id}>{product.name} - {product.price} <button onClick={() => handleDelete(product.id)}>Deletar</button></li>
         ))}
       </ul>
+      )}
       <div className="add-product">
         <form onSubmit={handleSubmit}>
           <label>
@@ -49,7 +59,8 @@ function App() {
             Preço:
             <input type="number" value={price} name="price" onChange={(e) => setPrice(e.target.value)} />
           </label>
-          <input type="submit" value="Criar"/>
+          {/* 7 - state de Loading no Post */}
+          {!loading && <input type="submit" value="Criar"/>}
         </form>
       </div>
     </div>
@@ -115,4 +126,18 @@ export default App;
 2 - Criamos un NOVO useEffect que mapeia outra mudança de estado
 
 3 - Após ela ocorrer executamos a adição de produto
+
+      Loading 
+
+1 - O estado de loading funciona como o intervalo entre as requisições feitas e seus envios até o usuário;
+
+2- Para criar o estado de loading precisamos criar uma variável de loading e setLoading, e iniciamos ela como false, ja que não está carregando nada ainda;
+
+3- No começo de cada reuisição alteramos o setLoading para true, o no final (quando é recebido os dados) o estado passa a ser falso denovo
+
+4- Diante desses estados podemos criar estruturas de decisões a partir desse valor no app principal
+
+      Tratamento de erros
+
+1 - O tratamento de erros é utilizado da mesma maneira que o estado loading, porém ele é formulado pelo try e catch
 */
