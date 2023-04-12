@@ -97,4 +97,14 @@ OBS: Podemos refatorar o context com um hook, e na chamada do context não preci
 
 - Na aplicação vamos consumir o estado atual do dado que está no reducer
 
+            Alterando contexto complexo
+
+- Vamos utilizar a função chamada dispatch
+
+- Ela também estará no reducer
+
+- Deve conter todas as informações necessárias para a alteração do valor do contexto
+
+- O siwth entra em ação e retorna um novo contexto
+
 */
