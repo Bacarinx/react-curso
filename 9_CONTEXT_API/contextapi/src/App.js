@@ -85,4 +85,16 @@ OBS: Podemos refatorar o context com um hook, e na chamada do context não preci
 
 - Temos um espaco para fazer uma validação do contexto;
           
+
+            Context mais complexo
+- Context mais ocmplexos podem ter variações no comportamento
+
+- Vamos utilizar o hook chamado useReducer
+
+- Parecido com o useState, porém para controle de dados complexos
+
+- Nele teremos diferentes ações com um switch
+
+- Na aplicação vamos consumir o estado atual do dado que está no reducer
+
 */
