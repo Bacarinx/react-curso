@@ -1,10 +1,11 @@
-import { useContext } from "react"
-import { CounterContext } from "../context/CounterContext"
 import ChangeCounter from "../components/ChangeCounter"
+
+//hook
+import { useCounterContext } from "../hooks/useCounterContext"
 
 const About = () => {
 
-  const {counter} = useContext(CounterContext)
+  const {counter} = useCounterContext() //destructuring
 
   return (
     <div>

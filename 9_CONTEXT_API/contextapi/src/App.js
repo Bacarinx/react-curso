@@ -32,7 +32,25 @@ function App() {
 
 export default App;
 
-/* 
+/*
+                                Aplicando um context em geral
+
+Para aplicar um context em geral utilizamos 4 passos
+
+1 passo - Criação do context, importando no arquivo o "createContext"
+
+2 passo - Passando as informações necessarias que queremos exportar dentro do provide
+
+3 passo - importar o context em outros arquivos, importando o "useContext" e o proprio contexto "myContext", e desestruturar ele em seguida
+
+4 passo - Alterar o valor do provide 
+
+OBS: Podemos refatorar o context com um hook, e na chamada do context não precisamos importar o useCOntext e o context, apenas o hook
+*/
+
+
+
+/*
             Context
 -Primeiro vamos ter que criar o context
 
@@ -59,4 +77,12 @@ export default App;
 -Ele ocorre no COntext e poderá ser consumida por todos os componentes que recebem o contexto
 
 -Assim finalizamos o ciclo do context API
+
+            Refatorando Context com hook
+- Podemos criar um hook para utilizar o contexto, isso nos da algumas vantagens
+
+- Não precisamos importar o useContext em todos os lugares, somente o Hook;
+
+- Temos um espaco para fazer uma validação do contexto;
+          
 */
