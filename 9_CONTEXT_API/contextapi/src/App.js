@@ -53,4 +53,10 @@ export default App;
 
 -Poderemos compartilhar o valor do contexto em todos os componentes
 
+            Alterando o COntexto
+-Precisamos criar um componente que utilize a função de mudanca de contexto
+
+-Ele ocorre no COntext e poderá ser consumida por todos os componentes que recebem o contexto
+
+-Assim finalizamos o ciclo do context API
 */
