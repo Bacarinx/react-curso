@@ -14,7 +14,7 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState();
   const [error, setError] = useState("");
 
-  const {createUser, error: authError, loading} = useAuthentication()
+  const {createUser, error: authError, loading} = useAuthentication() //destructuring
 
   const handleSubmit = async (e) => {
     e.preventDefault()

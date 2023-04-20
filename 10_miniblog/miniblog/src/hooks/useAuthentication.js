@@ -1,6 +1,6 @@
-import { db } from '../firebase/config' 
+import { db } from '../firebase/config' //importando o db do arquivo do firebase
 
-import {
+import { //importações padrões do Firebase
     getAuth,
     createUserWithEmailAndPassword,
     signInWithEmailAndPasword,
@@ -16,12 +16,12 @@ export const useAuthentication = () => {
 
     //cleanup
     //deal with memory leak
-    const [canclled, setCancelled] = useState(false)
+    const [cancelled, setCancelled] = useState(false)
 
     const auth = getAuth()
 
     function checkIfIsCancelled() {
-        if(canclled) {
+        if(cancelled) {
             return
         }
     }
@@ -63,7 +63,6 @@ export const useAuthentication = () => {
             setError(systemErrorMessage)
         }
 
-        
     }
 
     useEffect(() => {
