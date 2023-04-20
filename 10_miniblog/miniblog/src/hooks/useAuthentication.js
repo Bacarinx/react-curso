@@ -62,9 +62,7 @@ export const useAuthentication = () => {
 
             setError(systemErrorMessage)
         }
-
     }
-
     useEffect(() => {
         return () => setCancelled(true)
     }, [])
