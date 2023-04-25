@@ -20,7 +20,7 @@ const insertReducer = (state, action) => {
     }
 }
 
-export const useInsertDocuments = (docCollection) => {
+export const useInsertDocument = (docCollection) => {
 
     const [response, dispatch] = useReducer(insertReducer, initialState)
 
@@ -29,7 +29,7 @@ export const useInsertDocuments = (docCollection) => {
 
     const checkCancelBeforeDispatch = (action) => {
         if(!cancelled) {
-            dispatch()
+            dispatch(action)
         }
     }
 
@@ -57,11 +57,13 @@ export const useInsertDocuments = (docCollection) => {
                 payload: error.message,
             })
         }
+        
     }
-    useEffect = (() => {
-        return () => setCancelled(true);
+
+    useEffect(() => {
+        return setCancelled(true);
     }, [])
 
+    
     return { insertDocument, response }
-
 }

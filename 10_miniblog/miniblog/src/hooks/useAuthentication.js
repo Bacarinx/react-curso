@@ -1,5 +1,3 @@
-import { db } from '../firebase/config' //importando o db do arquivo do firebase
-
 import { //importações padrões do Firebase
     getAuth,
     createUserWithEmailAndPassword,
@@ -98,7 +96,6 @@ export const useAuthentication = () => {
             setError(systemErrorMessage)
             setLoading(false)
         }
-
     }
 
     useEffect(() => {
