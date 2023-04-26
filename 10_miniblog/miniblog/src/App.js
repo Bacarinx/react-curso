@@ -15,6 +15,9 @@ import About from "./pages/About/About"
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
 import CreatePost from './pages/CreatePost/CreatePost';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Search from './pages/Search/Search';
+import Post from './pages/Post/Post';
 
 //components
 import Navbar from './components/Navbar';
@@ -22,7 +25,7 @@ import Footer from './components/Footer';
 
 //context
 import { AuthProvider } from './context/AuthContext'; 
-import Dashboard from './pages/Dashboard/Dashboard';
+
 
 function App() {
 
@@ -48,12 +51,10 @@ function App() {
         <Navbar />
           <div className="container">
             <Routes>
-              <Route
-               path="/" element={<Home />} 
-              />
-              <Route
-               path="/about" element={<About/>} 
-               />
+              <Route path="/" element={<Home />}/>
+              <Route path="/about" element={<About/>}/>
+              <Route path="/search" element={<Search />}/>
+              <Route path="/posts/:id" element={<Post />} />
               <Route
                path="/login" element={!user ? <Login /> : <Navigate to="/"/>} 
                />
