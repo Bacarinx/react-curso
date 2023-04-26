@@ -6,7 +6,6 @@ import {
     orderBy, 
     onSnapshot, 
     where,
-    QuerySnapshot,
 } from "firebase/firestore";
 
 export const useFetchDocuments = (docCollection, search = null, uid = null) => {
@@ -19,7 +18,6 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
     const [cancelled, setCancelled] = useState(false)
 
    useEffect(() => {
-
     async function loadData() {
         if (cancelled){
             return
@@ -35,31 +33,32 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
             //busca
             //dashboard
 
-            q = await query(collection, orderBy('createdAt', "desc"))
+            q = await query(collectionRef, orderBy('createdAt', "desc"))
 
-            await onSnapshot(q, (QuerySnapshot) => { //serve como atualização de dados
+            await onSnapshot(q, (querySnapshot) => { //serve como atualização de dados
                 setDocuments(
-                    QuerySnapshot.docs.map((doc) => ({
+                    querySnapshot.docs.map((doc) => ({
                         id: doc.id,
                         ...doc.data(),
 
                     }))
                 )
             }) 
-            setLoading(false)
+            
 
         } catch (error) {
             console.log(error)
             setError(error.message)
-            setLoading(false)
         }
+        setLoading(false)
     }
+
     loadData()
     }, [docCollection, search, uid, cancelled])
 
     useEffect(() => {
         return () => setCancelled(true)
     }, [])
-    
-    return documents, loading, error
+
+    return {documents, loading, error}
 }
