@@ -44,5 +44,7 @@ export default App;
 1 - Tem a mesma função que useState, ele gerencia valores
 2 - Porém temos a possibilidade de executar uma função na hora de alteração do valor
 3 - Então temos que o useReducer recebe UM VALOR para gerenciar e uma função para alterar este valor
+4 - O reducer geralmente contém operações mais complexas, utilizando a estrutura SWITCH com Actions
+
 
 */
