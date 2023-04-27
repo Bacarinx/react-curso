@@ -6,9 +6,12 @@ import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 
+import { HookUseContext } from './components/HookUseContext';
+
 function App() {
   return (
     <div className="App">
+      <HookUseContext>
       <h1>React Hooks</h1>
       <BrowserRouter>
         <ul>
@@ -24,6 +27,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
+      </HookUseContext>
     </div>
   );
 }
@@ -59,5 +63,10 @@ export default App;
 
 7 - Técnica do cleanup (limpeza) --> Fazemos isso para não ter erros indesejados
 Ex: um timeout que ao mudar de página pode continuar a ser executado, por falta de limpeza
+
+              useContext
+1 - O useContext é um hook utilizado para consumir um contexto do COntext API
+2 - Precisamos criar o contexto e também o provider
+3 - Enolver os componentes que receberão os valores compartilhados
 
 */
