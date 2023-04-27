@@ -102,4 +102,10 @@ ex: "counter.current"
 3 - Fazendo com que algo possa ser atrelado a uma referência e não a um valor
 4 - Com isso conseguimos condicionar useEffects a uma variável de maneira mais inteligente
 
+
+              useLayoutEffect
+1 - Ele é bem parecido com o useEffect, porém ele roda ANTES de renderizar o componente
+2 - Este hook é sincrono, bloqueando o carregamento da página para o sucesso de sua funcionalidade
+3 - a ideia é executar algo antes que o usuário veja a página
+
 */
