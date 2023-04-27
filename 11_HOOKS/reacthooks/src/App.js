@@ -80,4 +80,9 @@ Ex: um timeout que ao mudar de página pode continuar a ser executado, por falta
 4 - Podemos accesá-lo apartir de o nome do ref + .current
 ex: "counter.current"
 5 - Usamos o useRef gerlmente quando precisarmos alterar algum estado dentro de uj useEffect, pois se usarmos o useState, ficará um looping infinito
+
+6 - useRef e DOM
+    -O use Ref pode ser utilizado para selecionar elementos do JSX
+    -Com isso podemos fazer majipulações de DOM ou aplixar funções como a Focus, que foca no input
+    -Este é um outro uso muito interessante do Hook
 */
