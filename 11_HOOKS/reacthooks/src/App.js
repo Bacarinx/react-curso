@@ -94,5 +94,12 @@ ex: "counter.current"
     1° caso: Quando estamos prezando pela performance, então queremos que uma função muito complexa não seja reconstruída toda vez;
 
     2° caso: É quandoo próprio REACT nos indica que uma função deveria estar contida em um useCallback, para evitar problemas de performance;
-  
+
+
+              useMemo
+1 - Sua função é bem parecido com o useCallback, porém ao contrário do useCallback, ele não utiliza funções, e sim VALORES
+2 - Ele pode ser utilizado para garantir a referência de um objeto
+3 - Fazendo com que algo possa ser atrelado a uma referência e não a um valor
+4 - Com isso conseguimos condicionar useEffects a uma variável de maneira mais inteligente
+
 */
