@@ -50,6 +50,7 @@ export default App;
 3 - Então temos que o useReducer recebe UM VALOR para gerenciar e uma função para alterar este valor
 4 - O reducer geralmente contém operações mais complexas, utilizando a estrutura SWITCH com Actions
 
+
               useEffect
 1 - Com ele podemos realizar desde alterações na DOM até requisições HTTP
 2 - Com ele, conseguimos controlar quando e quantas vezes uma ação acontece
@@ -64,9 +65,19 @@ export default App;
 7 - Técnica do cleanup (limpeza) --> Fazemos isso para não ter erros indesejados
 Ex: um timeout que ao mudar de página pode continuar a ser executado, por falta de limpeza
 
+
               useContext
 1 - O useContext é um hook utilizado para consumir um contexto do COntext API
 2 - Precisamos criar o contexto e também o provider
 3 - Enolver os componentes que receberão os valores compartilhados
+4- ele serve também como diminuição de código pois um contexto pode ser passado para vários componentes sendo necessário mudar apenas um arquivo
 
+
+              useRef
+1 - o useRef pode ser utilizado com useState 
+2 - porém, ele é um objeto, e seu valor está na propriedade current
+3 - outra particularidade é que ele não re-renderiza o componente ao ser alterado
+4 - Podemos accesá-lo apartir de o nome do ref + .current
+ex: "counter.current"
+5 - Usamos o useRef gerlmente quando precisarmos alterar algum estado dentro de uj useEffect, pois se usarmos o useState, ficará um looping infinito
 */
