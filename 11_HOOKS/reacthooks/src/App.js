@@ -85,4 +85,14 @@ ex: "counter.current"
     -O use Ref pode ser utilizado para selecionar elementos do JSX
     -Com isso podemos fazer majipulações de DOM ou aplixar funções como a Focus, que foca no input
     -Este é um outro uso muito interessante do Hook
+
+
+              useCallBack
+1 - Ele basicamente memoriza uma função, fazendo ela NÃO ser recontruida a cada renderização de um componente
+2 - Ele pode ser utilizado em duas situações:
+
+    1° caso: Quando estamos prezando pela performance, então queremos que uma função muito complexa não seja reconstruída toda vez;
+
+    2° caso: É quandoo próprio REACT nos indica que uma função deveria estar contida em um useCallback, para evitar problemas de performance;
+  
 */
