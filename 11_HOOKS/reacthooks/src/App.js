@@ -46,5 +46,18 @@ export default App;
 3 - Então temos que o useReducer recebe UM VALOR para gerenciar e uma função para alterar este valor
 4 - O reducer geralmente contém operações mais complexas, utilizando a estrutura SWITCH com Actions
 
+              useEffect
+1 - Com ele podemos realizar desde alterações na DOM até requisições HTTP
+2 - Com ele, conseguimos controlar quando e quantas vezes uma ação acontece
+3 - a sintaxe é formada por uma função a ser executada e um array de dependencias
+
+4 - (sem array de dependencias) --> neste caso a função será executado sempre que o componente for re-renderizado
+
+5 - (array de dependencia VAZIO) --> Neste caso a função só será executada na primeira vez quando a página for re-renderizada 
+
+6 - (array com valor) --> Executa só quando o valor que estiver dentro das dependências for alterado
+
+7 - Técnica do cleanup (limpeza) --> Fazemos isso para não ter erros indesejados
+Ex: um timeout que ao mudar de página pode continuar a ser executado, por falta de limpeza
 
 */
