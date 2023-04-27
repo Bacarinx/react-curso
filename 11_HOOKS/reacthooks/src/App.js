@@ -108,4 +108,10 @@ ex: "counter.current"
 2 - Este hook é sincrono, bloqueando o carregamento da página para o sucesso de sua funcionalidade
 3 - a ideia é executar algo antes que o usuário veja a página
 
+
+              useImperativeHandle
+1 - Com este hook, temos como acionar ações em um outro componente de forma imperativa
+2 - como não podemos passar refs como props, precisamos usar uma função "fowardRef"
+3 - isso nos permite passas as referências, e torna o nosso exemplo viável
+
 */
