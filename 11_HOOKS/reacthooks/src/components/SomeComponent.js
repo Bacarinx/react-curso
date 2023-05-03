@@ -1,6 +1,7 @@
 import {forwardRef, useRef, useImperativeHandle} from 'react'
 
-const SomeComponent = forwardRef((props, ref) => {
+const SomeComponent = forwardRef((props, ref) => { //usamos o forwardRef para receber as props e a ref do componente pai, que neste caso 
+
     const localInputRef = useRef()
     
     useImperativeHandle(ref, () => {
