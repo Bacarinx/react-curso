@@ -119,4 +119,15 @@ ex: "counter.current"
 1 - São hooks que nós criamos;
 2 - Muitas vezes para abstrair funções complexas do componente ou simplesmente reaproveitar código
 
+
+              React Dev Tools
+1 - É uma extensão utilizada em navegadores;
+2 - nela conseguimos entender o que o RTeact está gerando por meio do nosso código
+3 - conseguimos também verificar os states e outros parâmetros
+
+
+              useDebugValue
+1 - É um hook que é utilizado para DEBUG;
+2 - Aconselhado para ser utilizado em custom hooks;
+3 - Adicionar uma área (label) no React Dev tolls, ele estará no componente em que o hook é utilizado
 */
