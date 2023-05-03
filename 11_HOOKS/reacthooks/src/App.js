@@ -114,4 +114,9 @@ ex: "counter.current"
 2 - como não podemos passar refs como props, precisamos usar uma função "fowardRef"
 3 - isso nos permite passas as referências, e torna o nosso exemplo viável
 
+
+              CustomHooks
+1 - São hooks que nós criamos;
+2 - Muitas vezes para abstrair funções complexas do componente ou simplesmente reaproveitar código
+
 */
