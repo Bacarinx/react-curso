@@ -1,16 +1,12 @@
 const express = require("express")
-const app = (express)
+const app = express()
 
-app.request(
-    express.urlencoded({
-        extended: true
-    })
-)
+app.use(express.urlencoded({extended: true}))
 
-app.request(express.json())
+app.use(express.json())
 
 //rotas - endpoints
-app.get('/', (res, res) => {
+app.get('/', (req, res) => {
     res.json({message: "primeira rota criada com sucesso!"})
 })
 
