@@ -29,6 +29,20 @@ const useCreateValidation = () => {
     ]
 }
 
+const loginValidation = () => {
+    return[
+        body("email")
+            .isString()
+            .withMessage("O e-mail é obrigatório")
+            .isEmail()
+            .withMessage("Insíra um e-mail válido"),
+        body("password")
+            .isString()
+            .withMessage("A senha é obrigatória")
+    ]
+}
+
 module.exports = {
-    useCreateValidation
+    useCreateValidation,
+    loginValidation,
 }
