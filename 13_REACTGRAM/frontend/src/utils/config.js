@@ -19,7 +19,7 @@ export const requestConfig = (method, data, token = null, image = null) => {
     } else {
         config = {
             method,
-            body: JSON.stringfy(data),
+            body: JSON.stringify(data),
             headers: {
                 "Content-Type": "application/json"
             }
