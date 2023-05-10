@@ -1,0 +1,1 @@
+Em todos os services, vão conter as requisições e os dados que elas precisam fornecer para backend e acessar os endpoints da API

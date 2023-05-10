@@ -1,0 +1,1 @@
+Os Slices vao obter as requisições realizadas pelos services e vão lidar com elas de alguma maneira, seja setando um estado de loading quando estiver carregando, ou um estado de finalizado por exemplo
